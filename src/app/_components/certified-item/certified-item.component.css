@@ -1,0 +1,14 @@
+.student-name {
+  color: #1a2856;
+}
+
+.small-date {
+  color: #64748b;
+}
+
+.custom-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
