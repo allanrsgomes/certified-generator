@@ -1,0 +1,44 @@
+.menu-certificate {
+  max-width: 800px;
+}
+
+.btn-back {
+  gap: 6px;
+}
+
+.btn-back p,
+.btn-back i {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #64748b;
+}
+
+.btn-back i {
+  font-size: 20px;
+}
+
+.certificate {
+  position: relative;
+  margin-top: 32px;
+  background: url('../../../assets/cetificate/certificate_bg.png') center no-repeat ;
+  background-size: cover;
+  border-radius: 12px;
+  width: 800px;
+  height: 550px;
+}
+
+.content-certificate {
+  width: 720px;
+  height: 476px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.icon-medal {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}

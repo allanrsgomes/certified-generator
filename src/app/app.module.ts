@@ -8,8 +8,9 @@ import { PrimaryButtonComponent } from './_components/primary-button/primary-but
 import { SecundaryButtonComponent } from './_components/secundary-button/secundary-button.component';
 import { CertifiedItemComponent } from './_components/certified-item/certified-item.component';
 import { BaseUiComponent } from './_components/base-ui/base-ui.component';
-import { CertificadosComponent } from './pages/certificados/certificados.component';
-import { CertificadoFormComponent } from './pages/certificado-form/certificado-form.component';
+import { CertificatesComponent } from './pages/certificates/certificates.component';
+import { CertificateFormComponent } from './pages/certificate-form/certificate-form.component';
+import { CertificateComponent } from './pages/certificate/certificate.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { CertificadoFormComponent } from './pages/certificado-form/certificado-f
     SecundaryButtonComponent,
     CertifiedItemComponent,
     BaseUiComponent,
-    CertificadosComponent,
-    CertificadoFormComponent
+    CertificatesComponent,
+    CertificateFormComponent,
+    CertificateComponent
   ],
   imports: [
     BrowserModule,
