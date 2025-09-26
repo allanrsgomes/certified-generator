@@ -4,6 +4,6 @@
       <div class="fw-bold student-name">Nome do aluno</div>
       <small class="small-date">Gerado em 15/07/2024</small>
     </div>
-    <app-secundary-button [routerLink]="['certificados', id]" ></app-secundary-button>
+    <app-secundary-button (click)="redirectCertificate()"></app-secundary-button>
   </div>
 </div>

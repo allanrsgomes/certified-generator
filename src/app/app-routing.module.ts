@@ -13,7 +13,7 @@ const routes: Routes = [
     path: "certificados/novo",
     component: CertificateFormComponent
   },
-    {
+  {
     path: "certificados/:id",
     component: CertificateComponent
   }
