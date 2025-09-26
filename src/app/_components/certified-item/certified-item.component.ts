@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-certified-item',
   templateUrl: './certified-item.component.html',
   styleUrls: ['./certified-item.component.css']
 })
-export class CertifiedItemComponent implements OnInit {
+export class CertifiedItemComponent {
+  id: string = '6'
 
-  constructor() { }
+  constructor( private router: Router) {}
 
-  ngOnInit(): void {
+  redirectCertificate() {
+    this.router.navigate(['/certificados', 2]);
   }
-
 }
