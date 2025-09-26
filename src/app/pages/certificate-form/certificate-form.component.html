@@ -6,8 +6,8 @@
   <div class="custom-card w-100">
     <h2 class="card-title">Novo certificado</h2>
     <div class="mb-3 custom-input-group">
-      <label [(ngModel)]="name" for="nome" class="form-label">Nome</label>
-      <input type="text" class="form-control custom-input" id="nome" placeholder="Nome do Aluno">
+      <label for="name" class="form-label">Nome</label>
+      <input [(ngModel)]="name" type="text" class="form-control custom-input" id="name" placeholder="Nome do Aluno">
       <div class="error-message d-flex align-items-center">
         <i class="ph ph-warning-circle"></i>
         <p class="m-0">Error message</p>
@@ -16,7 +16,8 @@
     <div class="mb-3 d-flex align-items-center custom-input-group">
       <div class="flex-grow-1 me-2">
         <label for="atividade" class="form-label">Atividade</label>
-        <input [(ngModel)]="activity" type="text" class="form-control custom-input" id="atividade" placeholder="Atividade exercida">
+        <input [(ngModel)]="activity" type="text" class="form-control custom-input" id="atividade"
+          placeholder="Atividade exercida">
       </div>
       <app-secundary-button class="ms-3 mt-4"></app-secundary-button>
     </div>
@@ -24,13 +25,15 @@
       <label class="form-label">Lista de atividades</label>
       <div class="item-list w-100">
 
-        <div class="item">
-          <span class="item-text">Configuração com Angular CLI</span>
-          <div class="remove-btn">
-            <i class="ph-bold ph-x"></i>
+        <div *ngFor="let activity of activities">
+          <div class="item">
+            <span class="item-text">{{ activity }}</span>
+            <div class="remove-btn">
+              <i class="ph-bold ph-x"></i>
+            </div>
           </div>
+          <hr>
         </div>
-        <hr>
 
       </div>
       <app-primary-button></app-primary-button>
