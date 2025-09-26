@@ -23,7 +23,7 @@
 .certificate {
   position: relative;
   margin-top: 32px;
-  background: url('../../../assets/cetificate/certificate_bg.png') center no-repeat ;
+  background: url('../../../assets/cetificate/certificate_bg.png') center no-repeat;
   background-size: cover;
   border-radius: 12px;
   width: 800px;
@@ -35,10 +35,92 @@
   height: 476px;
   background-color: #fff;
   border-radius: 8px;
+  position: relative;
+}
+
+.content-certificate p {
+  margin: 0;
 }
 
 .icon-medal {
   position: absolute;
   top: 12px;
   left: 12px;
+  z-index: 10;
+}
+
+.info-certificate {
+  margin: 64px 40px 48px 40px;
+  gap: 20px;
+}
+
+.titles-certificate h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 160%;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #1A2856;
+}
+
+.titles-certificate p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: center;
+  color: #121621;
+}
+
+.student-name {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 80px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #3B5AC2;
+}
+
+.activities-list-group {
+  max-width: 414px;
+  margin: 0 auto;
+}
+
+.activities-list-title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #121621;
+  margin-bottom: 8px!important;
+}
+
+.activities-list {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #121621;
+}
+
+.emission-data {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #121621;
+}
+
+.signature {
+  position: absolute;
+  right: 40px;
+  bottom: 24px;
+  width: 64px;
+  height: 64px;
 }
