@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { PrimaryButtonComponent } from 'src/app/_components/primary-button/primary-button.component';
 import { SecundaryButtonComponent } from 'src/app/_components/secundary-button/secundary-button.component';
+import { CertificateService } from 'src/app/_services/certificate.service';
 import { Certificate } from 'src/app/interfaces/cetificate';
+import { v4 as uuidv4 } from 'uuid'
 
 @Component({
   selector: 'app-certificate-form',
@@ -13,10 +15,15 @@ import { Certificate } from 'src/app/interfaces/cetificate';
   styleUrls: ['./certificate-form.component.css']
 })
 export class CertificateFormComponent {
+
+  constructor(private certificateService: CertificateService) { }
+  @ViewChild('form') form!: NgForm
   activity: string = ''
   certificate: Certificate = {
+    id: '',
     name: '',
-    activities: []
+    activities: [],
+    issueDate: ''
   }
 
   invalidField(control: NgModel) {
@@ -28,6 +35,9 @@ export class CertificateFormComponent {
   }
 
   addActivity() {
+    if (this.activity.length == 0) {
+      return
+    }
     this.certificate.activities.push(this.activity)
     this.activity = ''
   }
@@ -36,11 +46,32 @@ export class CertificateFormComponent {
     this.certificate.activities.splice(index, 1)
   }
 
-  submit() {
-    if(!this.validForm()) {
-      return
-    }
-    console.log(this.certificate)
+  currentDate() {
+    const currentDate = new Date()
+    const day = String(currentDate.getDate()).padStart(2, '0')
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0')
+    const year = currentDate.getFullYear()
+    const formattedDate = `${day}/${month}/${year}`
+    return formattedDate
   }
 
+  certifiedInitialState(): Certificate {
+    return {
+      id: '',
+      name: '',
+      activities: [],
+      issueDate: ''
+    }
+  }
+
+  submit() {
+    if (!this.validForm()) {
+      return
+    }
+    this.certificate.issueDate = this.currentDate()
+    this.certificate.id = uuidv4()
+    this.certificateService.addCertificate(this.certificate)
+    this.certificate = this.certifiedInitialState()
+    this.form.resetForm()
+  }
 }

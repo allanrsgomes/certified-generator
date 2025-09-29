@@ -23,8 +23,8 @@
           class="form-control custom-input" id="activity" name="activity" placeholder="Atividade exercida">
 
       </div>
-      <app-secundary-button (click)="addActivity()" [disabled]="activity.length == 0" class="ms-3 mt-4" buttonText="Adicionar"
-        phClass="ph ph-plus"></app-secundary-button>
+      <app-secundary-button (click)="addActivity()" [disabled]="!activity || activity.length == 0" class="ms-3 mt-4"
+        buttonText="Adicionar" phClass="ph ph-plus"></app-secundary-button>
     </div>
     <div class="atividade-group mb-3">
       <label class="form-label">Lista de atividades</label>
@@ -41,7 +41,8 @@
         </div>
 
       </div>
-      <app-primary-button (click)="submit()" [disabled]="!validForm()" buttonText="Gerar certificado"></app-primary-button>
+      <app-primary-button (click)="submit()" [disabled]="!validForm()"
+        buttonText="Gerar certificado"></app-primary-button>
     </div>
   </div>
 </form>
