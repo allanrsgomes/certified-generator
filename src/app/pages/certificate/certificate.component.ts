@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SecundaryButtonComponent } from 'src/app/_components/secundary-button/secundary-button.component';
 
 @Component({
@@ -8,11 +8,6 @@ import { SecundaryButtonComponent } from 'src/app/_components/secundary-button/s
   templateUrl: './certificate.component.html',
   styleUrls: ['./certificate.component.css']
 })
-export class CertificateComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class CertificateComponent {
 
 }

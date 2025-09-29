@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +7,4 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor( private router: Router) {}
-
-  redirectToHome() {
-    this.router.navigate(['/']);
-  }
-
-  redirectToNew() {
-    this.router.navigate(['/certificados/novo']);
-  }
 }
