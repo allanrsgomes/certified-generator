@@ -23,17 +23,17 @@
           class="form-control custom-input" id="activity" name="activity" placeholder="Atividade exercida">
 
       </div>
-      <app-secundary-button [disabled]="activity.length == 0" class="ms-3 mt-4" buttonText="Adicionar"
+      <app-secundary-button (click)="addActivity()" [disabled]="activity.length == 0" class="ms-3 mt-4" buttonText="Adicionar"
         phClass="ph ph-plus"></app-secundary-button>
     </div>
     <div class="atividade-group mb-3">
       <label class="form-label">Lista de atividades</label>
       <div class="item-list w-100">
 
-        <div *ngFor="let activity of activities">
+        <div *ngFor="let activity of activities; let i = index">
           <div class="item">
             <span class="item-text">{{ activity }}</span>
-            <div class="remove-btn">
+            <div (click)="deleteActivity(i)" class="remove-btn">
               <i class="ph-bold ph-x"></i>
             </div>
           </div>

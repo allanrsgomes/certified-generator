@@ -14,7 +14,7 @@ import { SecundaryButtonComponent } from 'src/app/_components/secundary-button/s
 export class CertificateFormComponent {
   name: string = ''
   activity: string = ''
-  activities: string[] = ['Angular', 'React']
+  activities: string[] = []
 
   invalidField(control: NgModel) {
     return control.invalid && control.touched
@@ -23,4 +23,14 @@ export class CertificateFormComponent {
   validForm() {
     return this.activities.length > 0 && this.name.length > 0
   }
+
+  addActivity() {
+    this.activities.push(this.activity)
+    this.activity = ''
+  }
+
+  deleteActivity(index: number) {
+    this.activities.splice(index, 1)
+  }
+
 }
