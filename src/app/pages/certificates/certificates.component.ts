@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CertifiedItemComponent } from 'src/app/_components/certified-item/certified-item.component';
@@ -8,7 +9,7 @@ import { Certificate } from 'src/app/interfaces/cetificate';
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [CertifiedItemComponent, SecundaryButtonComponent, RouterLink],
+  imports: [CertifiedItemComponent, SecundaryButtonComponent, RouterLink, CommonModule],
   templateUrl: './certificates.component.html',
   styleUrls: ['./certificates.component.css']
 })

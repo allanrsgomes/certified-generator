@@ -3,20 +3,25 @@
     <h1 class="fw-bold custom-title">Certificados gerados</h1>
     <p class="mb-4 custom-subtitle">Visualize todos os certificados gerados</p>
   </div>
-  <div class="custom-card w-100">
+
+
+  <div *ngIf="certificates.length == 0" class="custom-card w-100">
     <i class="ph ph-certificate"></i>
     <div class="custom-warning-titles">
       <h3 class="card-title">Nenhum certificado gerado</h3>
       <p class="card-subtitle">Gere certificados para consultar o histórico.</p>
     </div>
-    <app-secundary-button routerLink="certificados/novo" buttonText="Gerar certificado">Gerar certificado</app-secundary-button>
+    <app-secundary-button routerLink="certificados/novo" buttonText="Gerar certificado">Gerar
+      certificado</app-secundary-button>
   </div>
 
-  <div class="list-certificates w-100">
-    <app-certified-item></app-certified-item>
-    <app-certified-item></app-certified-item>
-    <app-certified-item></app-certified-item>
-    <app-certified-item></app-certified-item>
-    <app-certified-item></app-certified-item>
+  <div *ngIf="certificates.length > 0" class="list-certificates w-100">
+    <div *ngFor="let certificate of certificates; let i = index">
+      <app-certified-item
+        [id]="certificate.id"
+        [studentName]="certificate.name"
+        [issueDate]="certificate.issueDate"
+      ></app-certified-item>
+    </div>
   </div>
 </div>
